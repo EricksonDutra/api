@@ -1,17 +1,28 @@
-const guests = []; // Armazenamento em memória (temporário)
+const express = require('express');
+const cors = require('cors');
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-export default function handler(req, res) {
-    if (req.method === 'GET') {
-        res.status(200).json(guests);
-    } else if (req.method === 'POST') {
-        const { guest, companions } = req.body;
-        if (!guest || !Array.isArray(companions)) {
-            return res.status(400).json({ error: 'Invalid data' });
-        }
-        guests.push({ guest, companions });
-        res.status(201).json({ message: 'Confirmation saved' });
+let confirmations = []; // Armazena os dados de confirmação
+
+// Rota para obter todas as confirmações
+app.get('/confirmations', (req, res) => {
+    res.json(confirmations);
+});
+
+// Rota para adicionar uma nova confirmação
+app.post('/confirmations', (req, res) => {
+    const { guest, companions } = req.body;
+
+    if (guest && Array.isArray(companions)) {
+        confirmations.push({ guest, companions });
+        res.status(201).json({ message: 'Confirmação registrada com sucesso!' });
     } else {
-        res.setHeader('Allow', ['GET', 'POST']);
-        res.status(405).end(`Method ${req.method} Not Allowed`);
+        res.status(400).json({ error: 'Dados inválidos.' });
     }
-}
+});
+
+// Define a porta do servidor
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`API rodando na porta ${PORT}`));
