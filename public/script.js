@@ -1,9 +1,10 @@
 // Lista inicial de convidados e acompanhantes
-const allGuests = ["Ana", "Carlos", "João", "Maria"];
-const allCompanions = ["Pedro", "Luiza", "Ricardo", "Fernanda"];
+const allGuests = ["Ana", "Carlos", "João", "Maria", "Erickson"];
+const allCompanions = ["Pedro", "Luiza", "Ricardo", "Fernanda", "teste"];
 
 // URL da API
-const apiUrl = 'http://localhost:3000/confirmations';
+ const apiUrl = 'https://convite-8cmsm57li-ericksondutras-projects.vercel.app/confirmations';
+//const apiUrl = 'http://localhost:3000/confirmations';
 
 
 // Seleciona os elementos do DOM
