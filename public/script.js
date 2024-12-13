@@ -3,7 +3,7 @@ const allGuests = ["Ana", "Carlos", "João", "Maria", "Erickson"];
 const allCompanions = ["Pedro", "Luiza", "Ricardo", "Fernanda", "teste"];
 
 // URL da API
- const apiUrl = 'https://convite-8cmsm57li-ericksondutras-projects.vercel.app/confirmations';
+ const apiUrl = 'https://convite-6hc79ran5-ericksondutras-projects.vercel.app/confirmations';
 //const apiUrl = 'http://localhost:3000/confirmations';
 
 
