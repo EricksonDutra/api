@@ -3,8 +3,8 @@ const allGuests = ["Ana", "Carlos", "João", "Maria", "Erickson"];
 const allCompanions = ["Pedro", "Luiza", "Ricardo", "Fernanda", "teste"];
 
 // URL da API
- const apiUrl = 'https://apiconvite.vercel.app/api/confirmations';
-//const apiUrl = 'http://localhost:3000/confirmations';
+//  const apiUrl = 'https://apiconvite.vercel.app/api/confirmations';
+const apiUrl = 'http://localhost:3000/confirmations';
 
 // Seleciona os elementos do DOM
 const guestForm = document.getElementById('guestForm');
